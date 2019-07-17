@@ -43,7 +43,6 @@ class Texty extends React.Component {
       hideDelay,
       tooltip,
       tooltipClassName,
-      tooltipStyle,
       tooltipMaxWidth,
       hideArrow,
       container,
@@ -84,8 +83,8 @@ class Texty extends React.Component {
       container,
       tooltip,
       tooltipClassName,
-      tooltipStyle,
       tooltipMaxWidth,
+      arrowClassName,
       hideArrow,
     } = this.props
 
@@ -96,7 +95,7 @@ class Texty extends React.Component {
         ref={ref}
         data-texty-tooltip={placement}
         className={tooltipClassName}
-        style={{ ...style, ...tooltipStyle, maxWidth: tooltipMaxWidth }}
+        style={{ ...style, maxWidth: tooltipMaxWidth }}
         onClick={this.handleMouseEvent}
         onDoubleClick={this.handleMouseEvent}
         onContextMenu={this.handleMouseEvent}
@@ -108,6 +107,7 @@ class Texty extends React.Component {
           <div
             ref={arrowProps.ref}
             data-texty-arrow={placement}
+            className={arrowClassName}
             style={arrowProps.style}
           />
         )}
@@ -209,10 +209,6 @@ Texty.propTypes = {
    */
   tooltipClassName: PropTypes.string,
   /**
-   * Style for the tooltip
-   */
-  tooltipStyle: PropTypes.object,
-  /**
    * Max width of the tooltip
    */
   tooltipMaxWidth: PropTypes.number,
@@ -224,6 +220,10 @@ Texty.propTypes = {
    * Delay milliseconds to hide when mouse leave
    */
   hideDelay: PropTypes.number,
+  /**
+   * Classname for the arrow
+   */
+  arrowClassName: PropTypes.string,
   /**
    * Whether to show the tooltip arrow
    */
