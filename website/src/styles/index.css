@@ -1,0 +1,42 @@
+@import '~react-texty/styles.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  /* Currently ems cause chrome bug misinterpreting rems on body element */
+  font-size: 1.6em;
+  line-height: 1.6;
+  color: #222;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.content {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+[data-texty] {
+  margin: 10px 0;
+}
+
+.light {
+  background-color: steelblue;
+  color: #fff;
+}
+
+.light [data-texty-arrow] {
+  border-color: steelblue transparent transparent;
+}

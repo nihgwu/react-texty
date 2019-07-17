@@ -5,27 +5,27 @@
   "author": "Neo Nie <nihgwu@live.com>",
   "homepage": "https://nihgwu.github.io/react-texty/",
   "scripts": {
-    "build": "gatsby build",
+    "start": "gatsby develop",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "deploy": "rimraf .cache public && gatsby build --prefix-paths && gh-pages -d public",
+    "prettier": "prettier --write 'src/**/*.{js,css}'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.13.21",
     "gatsby-plugin-google-analytics": "^2.1.4",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",
-    "gatsby-plugin-styled-components": "^3.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "styled-components": "^4.3.2"
+    "react-github-corner": "^2.3.0",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3"
   },
