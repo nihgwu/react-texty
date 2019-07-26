@@ -32,11 +32,11 @@ body {
   margin: 10px 0;
 }
 
-.light {
+.steelblue {
   background-color: steelblue;
   color: #fff;
 }
 
-.light [data-texty-arrow] {
+.steelblue [data-texty-arrow] {
   border-color: steelblue transparent transparent;
 }

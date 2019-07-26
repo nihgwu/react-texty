@@ -16,13 +16,13 @@ const Page = () => (
       <b>tooltip="foo": </b>I'm too long to show, so there is tooltip for the
       full content.
     </Text>
-    <Text tooltipClassName="light">
+    <Text tooltipClassName="steelblue">
       <b>tooltipClassName: </b>I'm too long to show, so there is tooltip for the
       full content.
     </Text>
-    <Text tooltipMaxWidth={500}>
-      <b>tooltipMaxWidth=500: </b>I'm too long to show, so there is tooltip for
-      the full content.
+    <Text tooltipStyle={{ color: 'red' }}>
+      <b>tooltipStyle={`{ color: 'red' }`}: </b>I'm too long to show, so there is
+      tooltip for the full content.
     </Text>
     <Text showDelay={1000}>
       <b>showDelay=1000: </b>I'm too long to show, so there is tooltip for the

@@ -11,14 +11,12 @@
 }
 
 [data-texty-tooltip] {
-  white-space: pre-wrap;
-  word-wrap: break-word;
   margin: 6px 0;
   padding: 4px 10px;
   border-radius: 4px;
   background-color: #222;
   color: #fff;
-  z-index: 9999;
+  z-index: 99999;
 }
 
 [data-texty-arrow] {

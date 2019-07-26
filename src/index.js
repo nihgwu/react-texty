@@ -39,11 +39,12 @@ class Texty extends React.Component {
       children,
       placement,
       // omit the following from rest
+      innerRef,
       showDelay,
       hideDelay,
       tooltip,
       tooltipClassName,
-      tooltipMaxWidth,
+      tooltipStyle,
       hideArrow,
       container,
       ...rest
@@ -83,7 +84,7 @@ class Texty extends React.Component {
       container,
       tooltip,
       tooltipClassName,
-      tooltipMaxWidth,
+      tooltipStyle,
       arrowClassName,
       hideArrow,
     } = this.props
@@ -95,7 +96,7 @@ class Texty extends React.Component {
         ref={ref}
         data-texty-tooltip={placement}
         className={tooltipClassName}
-        style={{ ...style, maxWidth: tooltipMaxWidth }}
+        style={tooltipStyle ? { ...style, ...tooltipStyle } : style}
         onClick={this.handleMouseEvent}
         onDoubleClick={this.handleMouseEvent}
         onContextMenu={this.handleMouseEvent}
@@ -117,6 +118,7 @@ class Texty extends React.Component {
   }
 
   setTargetRef = ref => {
+    this.props.innerRef && this.props.innerRef(ref)
     this.targetNode = ref
   }
 
@@ -184,7 +186,6 @@ class Texty extends React.Component {
 
 Texty.defaultProps = {
   tagName: 'div',
-  tooltipMaxWidth: 300,
   showDelay: 150,
   hideDelay: 150,
   hideArrow: false,
@@ -192,6 +193,10 @@ Texty.defaultProps = {
 }
 
 Texty.propTypes = {
+  /**
+   * Get inner ref of the component
+   */
+  innerRef: PropTypes.func,
   /**
    * Tag name for the component
    */
@@ -209,9 +214,9 @@ Texty.propTypes = {
    */
   tooltipClassName: PropTypes.string,
   /**
-   * Max width of the tooltip
+   * Custom style of the tooltip
    */
-  tooltipMaxWidth: PropTypes.number,
+  tooltipStyle: PropTypes.object,
   /**
    * Delay milliseconds to show when mouse enter
    */

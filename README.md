@@ -18,15 +18,12 @@ npm install --save react-texty
 - **children** `node`, Should be string or inline element
 - **tooltip** `node` Tooltip for the truncated text if set, or the children will be used
 - **tooltipClassName** `string` Classname for the tooltip
-- **tooltipMaxWidth** `number` Max width of the tooltip, defaults to `300`
+- **tooltipStyle** `number` Custom style of the tooltip
 - **showDelay** `number` Delay milliseconds to show when mouse enter, defaults to `150`
 - **hideDelay** `number` Delay milliseconds to hide when mouse leave, defaults to `150`
 - **arrowClassName** `string` Classname for the arrow
 - **hideArrow** `bool` Whether to show the tooltip arrow, defaults to `false`
 - **placement** `top|top-start|top-end|bottom|bottom-start|bottom-end` The placement of the tooltip, defaults to `top`
-- **container** `HTMLElement` The HTML Element to append the tooltip, defaults to `document.body`
-
-**In most cases you don't need to set the `container` manually**
 
 Learn more at https://nihgwu.github.io/react-texty/
 
