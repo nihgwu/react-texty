@@ -18,7 +18,7 @@ npm install --save react-texty
 - **children** `node`, Should be string or inline element
 - **tooltip** `node` Tooltip for the truncated text if set, or the children will be used
 - **tooltipClassName** `string` Classname for the tooltip
-- **tooltipStyle** `number` Custom style of the tooltip
+- **tooltipStyle** `object` Custom style of the tooltip
 - **showDelay** `number` Delay milliseconds to show when mouse enter, defaults to `150`
 - **hideDelay** `number` Delay milliseconds to hide when mouse leave, defaults to `150`
 - **arrowClassName** `string` Classname for the arrow
