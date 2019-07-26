@@ -1,6 +1,6 @@
 {
   "name": "react-texty",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A straight forward text component with tooltip support when it's truncated",
   "homepage": "https://nihgwu.github.io/react-texty/",
   "repository": {
