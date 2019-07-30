@@ -8,6 +8,8 @@
 [data-texty]::before {
   content: '';
   display: block;
+  width: 0;
+  height: 0;
 }
 
 [data-texty-tooltip] {

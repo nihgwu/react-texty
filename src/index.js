@@ -51,7 +51,9 @@ class Texty extends React.Component {
     } = this.props
     /* eslint-enable no-unused-vars */
 
-    if (!children) return null
+    if (!children) {
+      return <Tag {...rest} ref={this.setTargetRef} data-texty={false} />
+    }
 
     const target = this.targetNode
     const isTruncated = !!target && target.scrollWidth > target.offsetWidth
