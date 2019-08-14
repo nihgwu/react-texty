@@ -21,12 +21,19 @@ class Texty extends React.Component {
   componentDidUpdate() {
     if (this.state.isHovered) {
       window.addEventListener('scroll', this.handleScroll, true)
+      // react-virtualized-auto-sizer would trigger scroll events after tooltip shown in some case, we have to skip those scroll events
+      this.listenTimer = setTimeout(() => {
+        window.addEventListener('scroll', this.handleScroll, true)
+        delete this.listenTimer
+      }, 50)
     } else {
+      this._clearListenTimer()
       window.removeEventListener('scroll', this.handleScroll, true)
     }
   }
 
   componentWillUnmount() {
+    this._clearListenTimer()
     window.removeEventListener('scroll', this.handleScroll, true)
     this._clearShowTimer()
     this._clearHideTimer()
@@ -130,6 +137,13 @@ class Texty extends React.Component {
 
   handleScroll = e => {
     this.setState({ isHovered: false })
+  }
+
+  _clearListenTimer() {
+    if (this.listenTimer) {
+      clearTimeout(this.listenTimer)
+      delete this.listenTimer
+    }
   }
 
   _clearShowTimer() {
