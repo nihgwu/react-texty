@@ -12,8 +12,8 @@ const Page = () => (
       <b>tagName="a": </b>I'm too long to show, so there is tooltip for the full
       content.
     </Text>
-    <Text tooltip="foo">
-      <b>tooltip="foo": </b>I'm too long to show, so there is tooltip for the
+    <Text tooltip="react-texty">
+      <b>tooltip="react-texty": </b>I'm too long to show, so there is tooltip for the
       full content.
     </Text>
     <Text tooltipClassName="steelblue">
@@ -22,6 +22,10 @@ const Page = () => (
     </Text>
     <Text tooltipStyle={{ color: 'red' }}>
       <b>tooltipStyle={`{ color: 'red' }`}: </b>I'm too long to show, so there is
+      tooltip for the full content.
+    </Text>
+    <Text tooltipMaxWidth={300}>
+      <b>tooltipMaxWidth=300: </b>I'm too long to show, so there is
       tooltip for the full content.
     </Text>
     <Text showDelay={1000}>

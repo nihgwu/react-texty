@@ -5,13 +5,6 @@
   white-space: nowrap;
 }
 
-[data-texty]::before {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-}
-
 [data-texty-tooltip] {
   margin: 6px 0;
   padding: 4px 10px;
@@ -35,4 +28,16 @@
   top: -6px;
   bottom: inherit;
   transform: rotate(180deg);
+}
+
+/* disable the builtin tooltip for truncated text on Safari */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @supports (not (-ms-ime-align: auto)) {
+    .EllipsisText::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+    }
+  }
 }

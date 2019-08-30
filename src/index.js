@@ -52,6 +52,7 @@ class Texty extends React.Component {
       tooltip,
       tooltipClassName,
       tooltipStyle,
+      tooltipMaxWidth,
       hideArrow,
       container,
       ...rest
@@ -94,18 +95,21 @@ class Texty extends React.Component {
       tooltip,
       tooltipClassName,
       tooltipStyle,
+      tooltipMaxWidth,
       arrowClassName,
       hideArrow,
     } = this.props
 
     const content = tooltip || children
-
+    const extraStyle = tooltipMaxWidth
+      ? { ...tooltipStyle, maxWidth: tooltipMaxWidth }
+      : tooltipStyle
     return ReactDom.createPortal(
       <div
         ref={ref}
         data-texty-tooltip={placement}
         className={tooltipClassName}
-        style={tooltipStyle ? { ...style, ...tooltipStyle } : style}
+        style={extraStyle ? { ...style, ...extraStyle } : style}
         onClick={this.handleMouseEvent}
         onDoubleClick={this.handleMouseEvent}
         onContextMenu={this.handleMouseEvent}
@@ -233,6 +237,10 @@ Texty.propTypes = {
    * Custom style of the tooltip
    */
   tooltipStyle: PropTypes.object,
+  /**
+   * Max width of the tooltip
+   */
+  tooltipMaxWidth: PropTypes.number,
   /**
    * Delay milliseconds to show when mouse enter
    */
